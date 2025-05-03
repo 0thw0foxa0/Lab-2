@@ -56,7 +56,7 @@ int main() {
     string input, output;
     
     // Ввод строки
-    cout << "Введите строку: ";
+    cout << "Введите строку: "<<endl;
    // getline(cin, input);
     input = "programming program testprogramming";
     // Обрабатываем строку, пока находятся одинаковые подстроки
