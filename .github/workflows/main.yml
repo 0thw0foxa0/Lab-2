@@ -1,0 +1,25 @@
+name: Build C++ Programs on Windows
+
+on:
+  push:
+    branches: [ testhtml ]
+  pull_request:
+    branches: [ testhtml ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Compile the program
+      run: |
+        cl /EHsc main.cpp /Fe:program.exe
+    - name: Run the program
+      run: |
+        .\program.exe
