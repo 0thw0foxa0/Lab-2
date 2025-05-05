@@ -120,14 +120,14 @@ int main() {
     // Ввод строки
     std::cout << "Введите строку (максимум 2^31 символов, пустая строка для завершения):\n";
     char buffer[1024];
+    strcpy(buffer, "programming program testprogramming");
     input = new char[1024];
     inputCapacity = 1024;
     inputLen = 0;
-    buffer = "programming program testprogramming";
-    while (true) {
-        
+    
+   // while (true) {
         // std::cin.getline(buffer, 1024);
-        if (strlen(buffer) == 0) break; // Пустая строка — конец ввода
+     //   if (strlen(buffer) == 0) break; // Пустая строка — конец ввода
 
         int bufferLen = strlen(buffer);
         // Проверяем, достаточно ли места в input
@@ -141,7 +141,7 @@ int main() {
         memcpy(input + inputLen, buffer, bufferLen);
         inputLen += bufferLen;
         input[inputLen] = '\0'; // Завершаем строку
-    }
+    //}
 
     if (inputLen == 0) {
         std::cout << "Результат: (пустая строка)\n";
